@@ -1,4 +1,3 @@
-// stateless functional components
 // when parent passes new values, the child re renders
 
 const appRoot = document.getElementById('app');
@@ -129,19 +128,5 @@ class IndecisionApp extends React.Component {
       );
     }
   }
-
-
-  // stateless components
-
-  const User = (props) => {
-    return (
-        <div>
-            <p>Name : {props.name} </p>
-            <p>Age : {props.age} </p>
-        </div>
-    );
-  };
- 
- // ReactDOM.render(<User name="Sagar" age="25"/>, document.getElementById('app'));
-
+  
  ReactDOM.render(<IndecisionApp />, document.getElementById('app'));
