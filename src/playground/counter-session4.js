@@ -7,13 +7,27 @@
       constructor (props) {
           super(props);
           this.state = {
-              count: 0,
+              count: props.count,
           }
           this.count = 0;
           this.addClick = this.addClick.bind(this);
           this.subtractClick = this.subtractClick.bind(this);
           this.resetClick = this.resetClick.bind(this);
       }
+
+      componentDidMount () {
+        const count = parseInt(localStorage.getItem('count'), 10);
+        if (!isNan(options)) {
+            this.setState(() => ({ count }));
+        }
+      }
+
+      componentDidUpdate (prevProps, prevState) {
+        if (prevState.count !== this.state.count){
+            localStorage.addItem('count', this.state.count);
+        }
+      }
+
       addClick () {
           // will not re render automatically
           // this.state.count += 1;
@@ -52,4 +66,8 @@
       }
   }
   
-  ReactDOM.render(<Counter/>, appRoot)
+  Counter.defaultProps = {
+    count : 1,
+  };
+
+  ReactDOM.render(<Counter count={10} />, appRoot)

@@ -12,5 +12,10 @@ const User = (props) => {
         </div>
     );
   };
+
+  // setting default properties.
+  User.defaultProps = {
+      name: "test",
+  }
  
  ReactDOM.render(<User name="Sagar" age="25"/>, document.getElementById('app'));
