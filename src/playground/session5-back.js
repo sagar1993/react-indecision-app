@@ -70,4 +70,4 @@ Counter.defaultProps = {
   count : 1,
 };
 
-ReactDOM.render(<Counter count={10} />, appRoot)
+ReactDOM.render(<Counter count={10} />, appRoot);

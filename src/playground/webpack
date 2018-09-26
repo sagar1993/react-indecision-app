@@ -1,2 +1,56 @@
 // creates bundle
 // breaking all files, all can communicate using import export
+// doesn't just combine all files
+
+
+
+// webpack.config.js
+
+
+// provides import export for files
+// exports must be defined
+
+
+import { square } from './util';
+import validator from 'validator';
+
+console.log(validator.isEmail('test@gmail.com'));
+
+
+
+.babelrc
+
+ES6 class plugin
+no need to bind and setState
+
+Babel presets transform-class-properties
+
+
+class OldSyntax {
+    constructor() {
+        this.name = "sagar";
+        this.getGreeting = this.getGreeting.bind(this);
+    }
+    getGreeting () {
+        return "Hello" + this.name;
+    }
+}
+
+let obj = new OldSyntax();
+let greet = obj.getGreeting()
+console.log(greet());           // error if not bound
+
+
+
+
+class NewSyntax {
+    name = "Sagar";
+    getGreeting = () => {
+        return "Hello" + this.name;
+    }
+}
+let obj = new NewSyntax();
+let greet = obj.getGreeting()
+console.log(greet());           // works fine
+
+
