@@ -14,9 +14,10 @@ const Options = (props) => {
           </div>
           {options.length}
           {
-              options && options.map((option) => {
+              options && options.map((option, index) => {
                     return <Option 
                             key={option} 
+                            count={index+1}
                             option={option}
                             handleDeleteSingle={handleDeleteSingle}
                            />

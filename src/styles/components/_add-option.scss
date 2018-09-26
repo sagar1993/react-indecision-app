@@ -1,0 +1,11 @@
+
+.add-option {
+    display: flex;
+    // padding: $m-size;
+}
+
+.add-option__input {
+    border: none;
+    border-bottom: 0.3 rem solid darken($color: $dark-blue, $amount: 10%);
+    flex-grow: 1;
+}
